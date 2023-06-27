@@ -4,11 +4,12 @@ go 1.15
 
 require (
 	github.com/Rican7/retry v0.3.1
-	github.com/blend/go-sdk v1.20220411.3 // indirect
 	github.com/cheynewallace/tabby v1.1.1
 	github.com/cloudflare/cfssl v1.6.1 // indirect
 	github.com/coreos/etcd v3.3.27+incompatible
+	github.com/coreos/go-systemd v0.0.0-20190719114852-fd7a80b32e1f // indirect
 	github.com/ethereum/go-ethereum v1.10.4
+	github.com/gin-gonic/gin v1.9.1
 	github.com/gobuffalo/packd v1.0.1
 	github.com/gobuffalo/packr v1.30.1
 	github.com/hyperledger/fabric-lib-go v1.0.0 // indirect
@@ -23,8 +24,9 @@ require (
 	github.com/mitchellh/go-homedir v1.1.0
 	github.com/shirou/gopsutil v3.21.11+incompatible
 	github.com/sirupsen/logrus v1.8.1
+	github.com/spf13/cobra v1.3.0 // indirect
 	github.com/spf13/viper v1.10.1
-	github.com/stretchr/testify v1.7.0
+	github.com/stretchr/testify v1.8.3
 	github.com/urfave/cli/v2 v2.3.0
 	github.com/wcharczuk/go-chart/v2 v2.1.0
 	github.com/yusufpapurcu/wmi v1.2.2 // indirect
@@ -33,4 +35,6 @@ require (
 
 replace github.com/golang/protobuf => github.com/golang/protobuf v1.4.0
 
-replace google.golang.org/grpc => google.golang.org/grpc v1.28.1
+replace google.golang.org/grpc => google.golang.org/grpc v1.38.0
+
+replace github.com/ugorji/go => github.com/ugorji/go v1.2.11
