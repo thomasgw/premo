@@ -17,10 +17,10 @@ require (
 	github.com/jiuhuche120/spin v0.0.0-20220224085816-ab11eb007ff8
 	github.com/libp2p/go-libp2p-core v0.6.1
 	github.com/looplab/fsm v0.3.0
-	github.com/meshplus/bitxhub-core v1.3.1-0.20220511024304-f7458609c30a
-	github.com/meshplus/bitxhub-kit v1.2.1-0.20220412092457-5836414df781
-	github.com/meshplus/bitxhub-model v1.2.1-0.20220616031805-96a66092bc97
-	github.com/meshplus/go-bitxhub-client v1.4.1-0.20220412093230-11ca79f069fc
+	github.com/meshplus/bitxhub-core v1.28.0
+	github.com/meshplus/bitxhub-kit v1.28.0
+	github.com/meshplus/bitxhub-model v1.28.0
+	github.com/meshplus/go-bitxhub-client v1.28.0
 	github.com/mitchellh/go-homedir v1.1.0
 	github.com/shirou/gopsutil v3.21.11+incompatible
 	github.com/sirupsen/logrus v1.8.1
