@@ -33,8 +33,10 @@ require (
 	golang.org/x/image v0.0.0-20220413100746-70e8d0d3baa9 // indirect
 )
 
-replace github.com/golang/protobuf => github.com/golang/protobuf v1.4.0
+replace github.com/golang/protobuf => github.com/golang/protobuf v1.3.2
 
-replace google.golang.org/grpc => google.golang.org/grpc v1.38.0
+replace google.golang.org/grpc => google.golang.org/grpc v1.33.0
+
+replace google.golang.org/genproto => google.golang.org/genproto v0.0.0-20200218151345-dad8c97a84f5
 
 replace github.com/ugorji/go => github.com/ugorji/go v1.2.11

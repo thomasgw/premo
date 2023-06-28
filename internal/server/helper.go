@@ -120,10 +120,10 @@ func RegisterAppchain(pk crypto.PrivateKey) error {
 	if err != nil {
 		return err
 	}
-	err = VotePass(result.ProposalID)
-	if err != nil {
-		return err
-	}
+	// err = VotePass(result.ProposalID)
+	// if err != nil {
+	//	return err
+	// }
 	return nil
 }
 
@@ -163,10 +163,10 @@ func RegisterServer(pk crypto.PrivateKey) error {
 	if err != nil {
 		return err
 	}
-	err = VotePass(result.ProposalID)
-	if err != nil {
-		return err
-	}
+	//err = VotePass(result.ProposalID)
+	//if err != nil {
+	//	return err
+	//}
 	return nil
 }
 
