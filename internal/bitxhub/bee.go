@@ -54,11 +54,10 @@ func NewBee(tps int, adminPk crypto.PrivateKey, adminFrom *types.Address, config
 		return nil, err
 	}
 	node0 := &rpcx.NodeInfo{Addr: config.BitxhubAddr[0]}
-	client, err := rpcx.NewWithNoGlobalPool(
+	client, err := rpcx.New(
 		rpcx.WithNodesInfo(node0),
 		rpcx.WithLogger(log),
 		rpcx.WithPrivateKey(normalPk),
-		rpcx.WithPoolSize(16),
 	)
 	if err != nil {
 		return nil, err
@@ -427,9 +426,8 @@ func (bee *bee) vote(client rpcx.Client, key crypto.PrivateKey, index uint64, ar
 	}
 
 	res, err := client.InvokeBVMContract(constant.GovernanceContractAddr.Address(), "Vote", &rpcx.TransactOpts{
-		From:    address.String(),
-		Nonce:   index,
-		PrivKey: key,
+		From:  address.String(),
+		Nonce: index,
 	}, args...)
 	if err != nil {
 		return nil, err
@@ -440,8 +438,7 @@ func (bee *bee) vote(client rpcx.Client, key crypto.PrivateKey, index uint64, ar
 func (bee *bee) GetChainStatusById(client rpcx.Client, pk crypto.PrivateKey, id string) (*pb.Receipt, error) {
 	from, _ := pk.PublicKey().Address()
 	res, err := client.InvokeBVMContract(constant.AppchainMgrContractAddr.Address(), "GetAppchain", &rpcx.TransactOpts{
-		From:    from.String(),
-		PrivKey: pk,
+		From: from.String(),
 	}, rpcx.String(id))
 	if err != nil {
 		return nil, err
@@ -466,9 +463,8 @@ func TransferFromAdmin(client *rpcx.ChainClient, adminPrivKey crypto.PrivateKey,
 	}
 
 	ret, err := client.SendTransactionWithReceipt(tx, &rpcx.TransactOpts{
-		From:    adminFrom.String(),
-		Nonce:   atomic.AddUint64(&adminNonce, 1) - 1,
-		PrivKey: adminPrivKey,
+		From:  adminFrom.String(),
+		Nonce: atomic.AddUint64(&adminNonce, 1) - 1,
 	})
 	if err != nil {
 		return err

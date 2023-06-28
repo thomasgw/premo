@@ -33,6 +33,7 @@ func main() {
 		pierCMD,
 		bitxhubCMD,
 		statusCMD,
+		serverCMD,
 	}
 
 	err := app.Run(os.Args)

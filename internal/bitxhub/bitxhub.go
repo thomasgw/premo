@@ -265,7 +265,7 @@ func (broker *Broker) Start(typ string) error {
 					//if err != nil {
 					//	return
 					//}
-					txDelay := now - tx.(*pb.BxhTransaction).ReceiveTimestamp
+					txDelay := now - tx.(*pb.BxhTransaction).Timestamp
 					dly += txDelay
 					delayer += txDelay
 
@@ -355,9 +355,8 @@ func PrepareTo(client *rpcx.ChainClient, config *Config, adminPk crypto.PrivateK
 	}
 
 	res, err := client.InvokeBVMContract(constant.AppchainMgrContractAddr.Address(), "RegisterAppchain", &rpcx.TransactOpts{
-		From:    from.String(),
-		Nonce:   0,
-		PrivKey: pk,
+		From:  from.String(),
+		Nonce: 0,
 	}, args...)
 	if err != nil {
 		return "", err
@@ -396,8 +395,7 @@ func PrepareTo(client *rpcx.ChainClient, config *Config, adminPk crypto.PrivateK
 		rpcx.String("reason"),
 	}
 	res, err = client.InvokeBVMContract(constant.ServiceMgrContractAddr.Address(), "RegisterService", &rpcx.TransactOpts{
-		From:    from.String(),
-		PrivKey: pk,
+		From: from.String(),
 	}, args...)
 	if err != nil {
 		return "", fmt.Errorf("register service error %w", err)

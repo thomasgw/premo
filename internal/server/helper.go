@@ -120,10 +120,10 @@ func RegisterAppchain(pk crypto.PrivateKey) error {
 	if err != nil {
 		return err
 	}
-	err = VotePass(result.ProposalID)
-	if err != nil {
-		return err
-	}
+	//err = VotePass(result.ProposalID)
+	//if err != nil {
+	//	return err
+	//}
 	return nil
 }
 
@@ -163,10 +163,10 @@ func RegisterServer(pk crypto.PrivateKey) error {
 	if err != nil {
 		return err
 	}
-	err = VotePass(result.ProposalID)
-	if err != nil {
-		return err
-	}
+	//err = VotePass(result.ProposalID)
+	//if err != nil {
+	//	return err
+	//}
 	return nil
 }
 
@@ -318,9 +318,8 @@ func TransferFromAdmin(remote, address, amount string) error {
 	}
 	nonce := atomic.AddUint64(&nonce1, 1)
 	ret, err := client.SendTransactionWithReceipt(tx, &rpcx.TransactOpts{
-		From:    node1.String(),
-		Nonce:   nonce - 1,
-		PrivKey: nil,
+		From:  node1.String(),
+		Nonce: nonce - 1,
 	})
 	if err != nil {
 		return err

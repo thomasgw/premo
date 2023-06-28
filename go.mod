@@ -17,10 +17,10 @@ require (
 	github.com/jiuhuche120/spin v0.0.0-20220224085816-ab11eb007ff8
 	github.com/libp2p/go-libp2p-core v0.6.1
 	github.com/looplab/fsm v0.3.0
-	github.com/meshplus/bitxhub-core v1.3.1-0.20211019055819-2e20288cafa4
-	github.com/meshplus/bitxhub-kit v1.2.1-0.20210902085548-07f4fa85bfc9
-	github.com/meshplus/bitxhub-model v1.2.1-0.20220429101035-2564ec10365e
-	github.com/meshplus/go-bitxhub-client v1.4.1-0.20220323100327-9e86678c3170
+	github.com/meshplus/bitxhub-core v1.3.1-0.20220511024304-f7458609c30a
+	github.com/meshplus/bitxhub-kit v1.2.1-0.20220412092457-5836414df781
+	github.com/meshplus/bitxhub-model v1.2.1-0.20220616031805-96a66092bc97
+	github.com/meshplus/go-bitxhub-client v1.4.1-0.20220412093230-11ca79f069fc
 	github.com/mitchellh/go-homedir v1.1.0
 	github.com/shirou/gopsutil v3.21.11+incompatible
 	github.com/sirupsen/logrus v1.8.1
@@ -38,3 +38,5 @@ replace github.com/golang/protobuf => github.com/golang/protobuf v1.4.0
 replace google.golang.org/grpc => google.golang.org/grpc v1.38.0
 
 replace github.com/ugorji/go => github.com/ugorji/go v1.2.11
+
+replace github.com/meshplus/go-bitxhub-client => github.com/thomasgw/go-bitxhub-client v1.4.1-0.20230628030109-ffeb6768a298
